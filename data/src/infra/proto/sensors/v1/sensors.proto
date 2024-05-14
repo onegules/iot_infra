@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package infra.proto.sensors.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Sensors {
+  uint32 serial=1;
+  Event temperature = 2;
+  Event humidity = 3;
+  Event air_pressure = 4;
+  google.protobuf.Timestamp ingress_time = 5;
+
+}
+
+message Event {
+  float value = 1;
+  google.protobuf.Timestamp event_timestamp = 2;
+}
